@@ -24,6 +24,8 @@ fi
 if [ ! -d ~/.oh-my-zsh ]; then
     printf '\e[1mInstalling Oh-My-Zsh\e[0m\n'
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    touch ~/.zshrc
+    rm ~/.zshrc.pre-oh-my-zsh
 fi
 
 #
@@ -114,7 +116,7 @@ fi
 if [ -x "$(command -v zsh)" ] && [ "$SHELL" != "$(command -v zsh)" ]; then
 	printf '\e[1mChanging your shell to zsh\e[0m\n'
 	grep -q -F "$(command -v zsh)" /etc/shells || sudo sh -c 'echo "$(command -v zsh)" >> /etc/shells'
-	chsh -s "$(command -v zsh)"
+	sudo chsh -s "$(command -v zsh)"
 fi
 
 # Remove existing bash config files
