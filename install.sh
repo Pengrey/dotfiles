@@ -23,9 +23,8 @@ fi
 # Install oh-my-zsh if not installed
 if [ ! -d ~/.oh-my-zsh ]; then
     printf '\e[1mInstalling Oh-My-Zsh\e[0m\n'
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    touch ~/.zshrc
-    rm ~/.zshrc.pre-oh-my-zsh
+    export ZDOTDIR="$HOME/dotfiles/.zshrc"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc
 fi
 
 #
