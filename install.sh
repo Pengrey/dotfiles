@@ -72,7 +72,7 @@ fi
 # Install zsh-syntax-highlighting if not installed
 if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
     printf '\e[1mInstalling Zsh-Syntax-Highlighting\e[0m\n'
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
 # Install font-awesome if not installed
