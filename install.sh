@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Run full system upgrade
+printf '\e[1mRunning full system upgrade\e[0m\n'
+sudo pacman -Syu --noconfirm
+
 # Print message
 printf '\e[1mInstalling dotfiles\e[0m\n'
 
@@ -145,9 +149,5 @@ fi
 
 # Remove existing bash config files
 rm -rf ~/.bash*
-
-# Run full system upgrade
-printf '\e[1mRunning full system upgrade\e[0m\n'
-sudo pacman -Syu --noconfirm
 
 printf '\e[1mDotfiles successfully installed. Please reboot to finalize.\e[0m\n'
