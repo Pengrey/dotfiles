@@ -4,6 +4,43 @@
 printf '\e[1mRunning full system upgrade\e[0m\n'
 sudo pacman -Syu --noconfirm
 
+# Print message
+printf '\e[1mInstalling dotfiles\e[0m\n'
+
+# Install Git if not installed
+if [ ! -x "$(command -v git)" ]; then
+    printf '\e[1mInstalling Git\e[0m\n'
+    sudo pacman -S --noconfirm --needed git
+fi
+
+# git clone these dotfiles if not done yet
+if [ ! -d ~/dotfiles ]; then
+    printf '\e[1mCloning dotfiles repo\e[0m\n'
+    git clone https://github.com/Pengrey/dotfiles.git ~/dotfiles
+fi
+
+# Remove unecessary packages
+printf '\e[1mRemoving unecessary files\e[0m\n'
+rm -rf ~/dotfiles/.git
+rm -rf ~/dotfiles/install.sh
+rn -rf ~/dotfiles/README.md
+mv ~/dotfiles/.zshrc ~/.zshrc
+
+# Install stow if not installed
+if [ ! -x "$(command -v stow)" ]; then
+    printf '\e[1mInstalling Stow\e[0m\n'
+    sudo pacman -S --noconfirm --needed stow
+fi
+
+# Stow subdirectories of dotfiles
+printf '\e[1mLinking dotfiles to your home directory\e[0m\n'
+cd ~/dotfiles
+stow *
+cd ~
+
+# Remove stow
+sudo pacman -Rns --noconfirm stow
+
 #
 # Terminal
 #
@@ -120,34 +157,6 @@ fi
 
 # Remove existing bash config files
 rm -rf ~/.bash*
-
-# Print message
-printf '\e[1mInstalling dotfiles\e[0m\n'
-
-# Install Git if not installed
-if [ ! -x "$(command -v git)" ]; then
-    printf '\e[1mInstalling Git\e[0m\n'
-    sudo pacman -S --noconfirm --needed git
-fi
-
-# git clone these dotfiles if not done yet
-if [ ! -d ~/dotfiles ]; then
-    printf '\e[1mCloning dotfiles repo\e[0m\n'
-    git clone https://github.com/Pengrey/dotfiles.git ~/dotfiles
-fi
-
-# Install stow if not installed
-if [ ! -x "$(command -v stow)" ]; then
-    printf '\e[1mInstalling Stow\e[0m\n'
-    sudo pacman -S --noconfirm --needed stow
-fi
-
-# Stow subdirectories of dotfiles
-printf '\e[1mLinking dotfiles to your home directory\e[0m\n'
-for dir in ~/dotfiles/*/; do
-    stow --dir ~/dotfiles --target ~ "$(basename "${dir}")"
-done
-sudo pacman -Rns --noconfirm stow
 
 printf '\e[1mInstalling packages\e[0m\n'
 
