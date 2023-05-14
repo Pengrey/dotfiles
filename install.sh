@@ -63,6 +63,24 @@ if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc
 fi
 
+# Install zsh-autosuggestions if not installed
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+    printf '\e[1mInstalling Zsh-Autosuggestions\e[0m\n'
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+fi
+
+# Install zsh-syntax-highlighting if not installed
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+    printf '\e[1mInstalling Zsh-Syntax-Highlighting\e[0m\n'
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/plugins/zsh-syntax-highlighting
+fi
+
+# Install font-awesome if not installed
+if [ ! -d /usr/share/fonts/OTF/Font-Awesome ]; then
+    printf '\e[1mInstalling Font-Awesome\e[0m\n'
+    sudo pacman -S --noconfirm --needed otf-font-awesome
+fi
+
 #
 # Terminal Applications
 #
@@ -151,7 +169,7 @@ fi
 if [ -x "$(command -v zsh)" ] && [ "$SHELL" != "$(command -v zsh)" ]; then
 	printf '\e[1mChanging your shell to zsh\e[0m\n'
 	grep -q -F "$(command -v zsh)" /etc/shells || sudo sh -c 'echo "$(command -v zsh)" >> /etc/shells'
-	sudo chsh -s "$(command -v zsh)"
+	chsh -s "$(command -v zsh)"
 fi
 
 # Remove existing bash config files
