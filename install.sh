@@ -34,9 +34,9 @@ fi
 
 # Stow subdirectories of dotfiles
 printf '\e[1mLinking dotfiles to your home directory\e[0m\n'
-cd ~/dotfiles
-stow *
-cd ~
+for dir in ~/dotfiles/*/; do
+    stow --dir ~/dotfiles --target ~ "$(basename "${dir}")"
+done
 
 # Remove stow
 sudo pacman -Rns --noconfirm stow
@@ -60,7 +60,6 @@ fi
 # Install oh-my-zsh if not installed
 if [ ! -d ~/.oh-my-zsh ]; then
     printf '\e[1mInstalling Oh-My-Zsh\e[0m\n'
-    export ZDOTDIR="$HOME/dotfiles/.zshrc"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc
 fi
 
@@ -157,7 +156,5 @@ fi
 
 # Remove existing bash config files
 rm -rf ~/.bash*
-
-printf '\e[1mInstalling packages\e[0m\n'
 
 printf '\e[1mDotfiles successfully installed. Please reboot to finalize.\e[0m\n'
