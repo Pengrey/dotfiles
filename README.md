@@ -1,6 +1,6 @@
 # Dotfiles
 
-![image](https://github.com/Pengrey/dotfiles/assets/55480558/123c021c-82e7-4fa3-bc0a-4827a3a085c0)
+![image](https://github.com/Pengrey/dotfiles/assets/55480558/bda87499-1802-44c3-bf2e-79062486393f)
 
 ## Installation
 
