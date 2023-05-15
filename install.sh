@@ -85,12 +85,6 @@ fi
 # Terminal Applications
 #
 
-# Install curl if not installed
-if [ ! -x "$(command -v curl)" ]; then
-    printf '\e[1mInstalling Curl\e[0m\n'
-    sudo pacman -S --noconfirm --needed curl
-fi
-
 # Install wget if not installed
 if [ ! -x "$(command -v wget)" ]; then
     printf '\e[1mInstalling Wget\e[0m\n'
