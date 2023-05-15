@@ -131,12 +131,6 @@ if [ ! -x "$(command -v firefox)" ]; then
     sudo pacman -S --noconfirm --needed firefox
 fi
 
-# Install dolphin if not installed
-if [ ! -x "$(command -v dolphin)" ]; then
-    printf '\e[1mInstalling Dolphin\e[0m\n'
-    sudo pacman -S --noconfirm --needed dolphin
-fi
-
 #
 # Desktop Environment
 #
@@ -163,7 +157,7 @@ fi
 if [ -x "$(command -v zsh)" ] && [ "$SHELL" != "$(command -v zsh)" ]; then
 	printf '\e[1mChanging your shell to zsh\e[0m\n'
 	grep -q -F "$(command -v zsh)" /etc/shells || sudo sh -c 'echo "$(command -v zsh)" >> /etc/shells'
-	chsh -s "$(command -v zsh)"
+	sudo chsh -s $(command -v zsh) $(whoami)
 fi
 
 # Remove existing bash config files
