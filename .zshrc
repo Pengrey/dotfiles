@@ -4,8 +4,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load
 ZSH_THEME="gozilla"
 
-source $ZSH/oh-my-zsh.sh
-
 # If running from tty exec sway
 [ "$(tty)" = "/dev/tty1" ] && WLR_NO_HARDWARE_CURSORS=1 exec sway
 
@@ -13,6 +11,8 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+
+source $ZSH/oh-my-zsh.sh
 
 # Alias
 alias vim="nvim"
