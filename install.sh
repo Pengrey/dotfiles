@@ -163,7 +163,4 @@ fi
 # Remove existing bash config files
 rm -rf ~/.bash*
 
-# Remove dotfiles dir
-rm -rf ~/dotfiles
-
 printf '\e[1mDotfiles successfully installed. Please reboot to finalize.\e[0m\n'
