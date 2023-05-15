@@ -23,7 +23,7 @@ fi
 printf '\e[1mRemoving unecessary files\e[0m\n'
 rm -rf ~/dotfiles/.git
 rm -rf ~/dotfiles/install.sh
-rn -rf ~/dotfiles/README.md
+rm -rf ~/dotfiles/README.md
 mv ~/dotfiles/.zshrc ~/.zshrc
 
 # Install stow if not installed
