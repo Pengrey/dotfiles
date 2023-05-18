@@ -198,6 +198,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Audio Stuff
+#
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
