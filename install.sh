@@ -131,6 +131,18 @@ if [ ! -x "$(command -v firefox)" ]; then
     sudo pacman -S --noconfirm --needed firefox
 fi
 
+# Install nm-connection-editor if not installed
+if [ ! -x "$(command -v nm-connection-editor)" ]; then
+    printf '\e[1mInstalling nm-connection-editor\e[0m\n'
+    sudo pacman -S --noconfirm --needed nm-connection-editor
+fi
+
+# Install nm-manager-applet if not installed
+if [ ! -x "$(command -v nm-manager-applet)" ]; then
+    printf '\e[1mInstalling nm-manager-applet\e[0m\n'
+    sudo pacman -S --noconfirm --needed nm-manager-applet
+fi
+
 #
 # Desktop Environment
 #
