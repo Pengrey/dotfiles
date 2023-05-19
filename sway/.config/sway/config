@@ -82,6 +82,9 @@ input * {
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+    
+    # Lock Screen
+    bindsym $mod+x exec '$lock_cmd'
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
