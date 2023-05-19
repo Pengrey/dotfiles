@@ -10,7 +10,7 @@ window:
 # Colors (Mariana)
 colors:
   bright:
-    black: '#333333'
+    black: '#330563'
     blue: '#85add6'
     cyan: '#82c4c4'
     green: '#acd1a8'
