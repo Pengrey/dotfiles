@@ -121,6 +121,14 @@ if [ ! -x "$(command -v btop)" ]; then
     sudo pacman -S --noconfirm --needed btop
 fi
 
+# Install zathura and zathura-pdf-mupdf
+if [ ! -x "$(command -v zathura)" ]; then
+    printf '\e[1mInstalling zathura\e[0m\n'
+    sudo pacman -S --noconfirm --needed zathura
+    printf '\e[1mInstalling zathura-pdf-mupdf\e[0m\n'
+    sudo pacman -S --noconfirm --needed zathura-pdf-mupdf
+fi
+
 #
 # GUI Applications
 #
