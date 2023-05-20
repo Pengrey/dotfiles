@@ -143,6 +143,13 @@ if [ ! -x "$(command -v nm-manager-applet)" ]; then
     sudo pacman -S --noconfirm --needed nm-manager-applet
 fi
 
+
+# Install pavucontrol if not installed
+if [ ! -x "$(command -v pavucontrol)" ]; then
+    printf '\e[1mInstalling pavucontrol\e[0m\n'
+    sudo pacman -S --noconfirm --needed pavucontrol
+fi
+
 #
 # Desktop Environment
 #
