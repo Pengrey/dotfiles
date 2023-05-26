@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias
 alias vim="nvim"
-alias ls="exa -l"
+alias ls="exa -l --icons"
 alias cat="bat"
 alias update="sudo pacman -Syu"
 
