@@ -45,6 +45,16 @@ sudo pacman -Rns --noconfirm stow
 # Terminal
 #
 
+# Install yay if not installed
+if [ ! -x "$(command -v yay)" ]; then
+    printf '\e[1mInstalling yay\e[0m\n'
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
+fi
+
 # Install alacritty if not installed
 if [ ! -x "$(command -v alacritty)" ]; then
     printf '\e[1mInstalling Alacritty\e[0m\n'
@@ -141,10 +151,10 @@ fi
 # GUI Applications
 #
 
-# Install firefox if not installed
-if [ ! -x "$(command -v firefox)" ]; then
-    printf '\e[1mInstalling Firefox\e[0m\n'
-    sudo pacman -S --noconfirm --needed firefox
+# Install brave if not installed
+if [ ! -x "$(command -v brave)" ]; then
+    printf '\e[1mInstalling Brave\e[0m\n'
+    yay -S brave-bin --noconfirm --needed
 fi
 
 # Install nm-connection-editor if not installed
