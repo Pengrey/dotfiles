@@ -154,7 +154,7 @@ fi
 # Install brave if not installed
 if [ ! -x "$(command -v brave)" ]; then
     printf '\e[1mInstalling Brave\e[0m\n'
-    yay -S brave-bin --noconfirm --needed
+    sudo yay -S brave-bin --noconfirm --needed
 fi
 
 # Install nm-connection-editor if not installed
@@ -173,6 +173,12 @@ fi
 if [ ! -x "$(command -v pavucontrol)" ]; then
     printf '\e[1mInstalling pavucontrol\e[0m\n'
     sudo pacman -S --noconfirm --needed pavucontrol
+fi
+
+# Install wdisplays if not installed
+if [ ! -x "$(command -v wdisplays)" ]; then
+    printf '\e[1mInstalling wdisplays\e[0m\n'
+    sudo yay -S wdisplays --noconfirm --needed
 fi
 
 #
