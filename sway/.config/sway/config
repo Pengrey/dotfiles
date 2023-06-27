@@ -64,7 +64,6 @@ input * {
 
 #### Set touchpad support
 input 1739:52575:MSFT001:01_06CB:CD5F_Touchpad {
-	tab enabled
 	natural_scroll enabled
 }
 
