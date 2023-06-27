@@ -150,7 +150,7 @@ fi
 # Install brave if not installed
 if [ ! -x "$(command -v brave)" ]; then
     printf '\e[1mInstalling Brave\e[0m\n'
-    sudo yay -S brave-bin --noconfirm --needed
+    sudo yay -S --noconfirm --needed brave-bin
 fi
 
 # Install nm-connection-editor if not installed
@@ -174,7 +174,7 @@ fi
 # Install wdisplays if not installed
 if [ ! -x "$(command -v wdisplays)" ]; then
     printf '\e[1mInstalling wdisplays\e[0m\n'
-    sudo yay -S wdisplays --noconfirm --needed
+    sudo yay -S --noconfirm --needed wdisplays
 fi
 
 #
