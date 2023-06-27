@@ -75,6 +75,12 @@ if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
+# Install font-awesome if not installed
+if [ ! -d /usr/share/fonts/OTF/Font-Awesome ]; then
+    printf '\e[1mInstalling Font-Awesome\e[0m\n'
+    sudo pacman -S --noconfirm --needed otf-font-awesome
+fi
+
 # Install Nerd Fonts if not installed
 if [ ! -d .local/share/fonts/NerdFonts ]; then
     printf '\e[1mInstalling Nerd Fonts\e[0m\n'
