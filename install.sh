@@ -48,11 +48,7 @@ sudo pacman -Rns --noconfirm stow
 # Install yay if not installed
 if [ ! -x "$(command -v yay)" ]; then
     printf '\e[1mInstalling yay\e[0m\n'
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
-    cd ..
-    rm -rf yay
+    git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
 fi
 
 # Install alacritty if not installed
