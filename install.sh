@@ -45,12 +45,6 @@ sudo pacman -Rns --noconfirm stow
 # Terminal
 #
 
-# Install yay if not installed
-if [ ! -x "$(command -v yay)" ]; then
-    printf '\e[1mInstalling yay\e[0m\n'
-    git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
-fi
-
 # Install alacritty if not installed
 if [ ! -x "$(command -v alacritty)" ]; then
     printf '\e[1mInstalling Alacritty\e[0m\n'
@@ -147,12 +141,6 @@ fi
 # GUI Applications
 #
 
-# Install brave if not installed
-if [ ! -x "$(command -v brave)" ]; then
-    printf '\e[1mInstalling Brave\e[0m\n'
-    sudo yay -S --noconfirm --needed brave-bin
-fi
-
 # Install nm-connection-editor if not installed
 if [ ! -x "$(command -v nm-connection-editor)" ]; then
     printf '\e[1mInstalling nm-connection-editor\e[0m\n'
@@ -169,12 +157,6 @@ fi
 if [ ! -x "$(command -v pavucontrol)" ]; then
     printf '\e[1mInstalling pavucontrol\e[0m\n'
     sudo pacman -S --noconfirm --needed pavucontrol
-fi
-
-# Install wdisplays if not installed
-if [ ! -x "$(command -v wdisplays)" ]; then
-    printf '\e[1mInstalling wdisplays\e[0m\n'
-    sudo yay -S --noconfirm --needed wdisplays
 fi
 
 #
