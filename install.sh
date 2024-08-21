@@ -137,12 +137,6 @@ if [ ! -x "$(command -v zathura)" ]; then
     sudo pacman -S --noconfirm --needed zathura-pdf-mupdf
 fi
 
-# Install tailscale if not installed
-if [ ! -x "$(command -v tailscale)" ]; then
-    printf '\e[1mInstalling tailscale\e[0m\n'
-    sudo pacman -S --noconfirm --needed tailscale
-fi
-
 #
 # GUI Applications
 #
