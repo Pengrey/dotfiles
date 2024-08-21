@@ -164,6 +164,12 @@ if [ ! -x "$(command -v pavucontrol)" ]; then
     sudo pacman -S --noconfirm --needed pavucontrol
 fi
 
+# Install firefox if not installed
+if [ ! -x "$(command -v firefox)" ]; then
+    printf '\e[1mInstalling firefox\e[0m\n'
+    sudo pacman -S --noconfirm --needed firefox
+fi
+
 #
 # Desktop Environment
 #
