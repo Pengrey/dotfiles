@@ -99,11 +99,16 @@ if [ ! -x "$(command -v wget)" ]; then
     sudo pacman -S --noconfirm --needed wget
 fi
 
-# Install neo-vim if not installed
+# Install neovim if not installed
 if [ ! -x "$(command -v nvim)" ]; then
     printf '\e[1mInstalling Neo-Vim\e[0m\n'
     sudo pacman -S --noconfirm --needed neovim
 fi
+
+# Config neovim
+printf '\e[1mSetting nvim config\e[0m\n'
+git clone https://github.com/NvChad/starter ~/.config/nvim
+
 
 # Install exa if not installed
 if [ ! -x "$(command -v exa)" ]; then
