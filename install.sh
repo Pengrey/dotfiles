@@ -82,12 +82,10 @@ if [ ! -d /usr/share/fonts/OTF/Font-Awesome ]; then
 fi
 
 # Install Nerd Fonts if not installed
-if [ ! -d .local/share/fonts/NerdFonts ]; then
-    printf '\e[1mInstalling Nerd Fonts\e[0m\n'
-    git clone https://github.com/ryanoasis/nerd-fonts.git
-    ./nerd-fonts/install.sh
-    rm -rf nerd-fonts
+if [ ! -d "/usr/share/fonts/TTF/JetBrainsMono" ]; then
+    sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd
 fi
+
 
 #
 # Terminal Applications
