@@ -5,9 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gozilla"
 
 # If running from tty exec sway
-if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec sway
-fi
+[ "$(tty)" = "/dev/tty1" ] && WLR_NO_HARDWARE_CURSORS=1 exec sway
 
 plugins=(
     zsh-autosuggestions
