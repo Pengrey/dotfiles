@@ -83,6 +83,7 @@ fi
 
 # Install Nerd Fonts if not installed
 if [ ! -d "/usr/share/fonts/TTF/JetBrainsMono" ]; then
+    printf '\e[1mInstalling Nerd Fonts\e[0m\n'
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd
 fi
 
