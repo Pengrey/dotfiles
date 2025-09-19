@@ -16,3 +16,4 @@ alias vim="nvim"
 alias ls="exa -l --icons"
 alias cat="bat"
 alias update="sudo pacman -Syu"
+alias tailup='sudo systemctl start tailscaled && sudo tailscale up'
